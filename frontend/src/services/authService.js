@@ -53,7 +53,6 @@ export const authService = {
     const decoded = authService.decodeToken(token);
     if (!decoded) return false;
 
-    // Check if token is expired
     const currentTime = Date.now() / 1000;
     return decoded.exp > currentTime;
   },
